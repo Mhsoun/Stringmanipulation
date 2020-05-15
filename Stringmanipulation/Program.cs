@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Stringmanipulation
@@ -19,7 +20,8 @@ namespace Stringmanipulation
             string leadingSpc = userString.TrimStart();
             Console.WriteLine("2. Removes leading spaces\n" + leadingSpc);
             //Removes trailing space
-            string trailingSpc = userString.Trim();
+            //string trailingSpc = userString.Trim();
+            string trailingSpc = Regex.Replace(leadingSpc, @"\s+", " ");
             Console.WriteLine("3. Removes trailing space\n" + trailingSpc);
             //Replaces all lowercase A by uppercase A
             string AToUppar = userString.Replace("a", "A");
